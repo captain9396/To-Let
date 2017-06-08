@@ -22,6 +22,8 @@
         <activity android:name=".SignInActivity"></activity>
         <activity android:name=".HomePageActivity"></activity>
         <activity android:name=".AdInfoActivity"></activity>
+        <activity android:name=".MyAdsActivity"></activity>
+
     </application>
 
 </manifest>
