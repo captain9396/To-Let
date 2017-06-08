@@ -21,26 +21,26 @@ public class MyAdsActivity extends Activity {
 
     private Button homeButtonAds;
     private Button accountButtonAds;
+    private String username;
+    private String password;
+
+
+    private toletDBHandler dbHandler;
+
+    private CurrentUser currentUser = CurrentUser.getInstance();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_ads_page);
 
-//        String[] foods = {"apple", "carrot", "orange",
-//                "apple", "carrot", "orange",
-//                "apple", "carrot", "orange",
-//                "apple", "carrot", "orange",
-//                "apple", "carrot", "orange",
-//                "apple", "carrot", "orange",
-//                "apple", "carrot", "orange"};
-        ArrayList foods = new ArrayList<>();
+        dbHandler = new toletDBHandler(this  , null , null , 1);
 
-//        foods.add(new myAdsObjects("apple" , "34" , "12" , "12313"));
-//        foods.add(new myAdsObjects("orange" , "46" , "12" , "19999"));
-//        foods.add(new myAdsObjects("kola" , "89" , "8" , "31553"));
-//        foods.add(new myAdsObjects("grape" , "32" , "9" , "50000"));
-//        foods.add(new myAdsObjects("dragon" , "12" , "67" , "45000"));
+        username = currentUser.getUsername();
+        password = currentUser.getPassword();
+
+        ArrayList foods = dbHandler.readAdsDatabase(username , password);
+
 
         ListAdapter myListAdapter = new CustomAdapter(this, foods);
         ListView myListView = (ListView) findViewById(R.id.myAdsList);

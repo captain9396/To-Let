@@ -11,8 +11,13 @@ import java.util.ArrayList;
 public class toletDBHandler extends SQLiteOpenHelper{
 
     private static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "ads.db";
+    public static final String DATABASE_ADS = "ads.db";
+    public static final String DATABASE_ACCOUNTS = "accounts.db";
+
+    
     public static final String TABLE_ADS = "Ads";   // name of the table
+    public static final String TABLE_ACCOUNTS = "Accounts";   // name of the table
+    
     public static final String COLUMN_USER_NAME = "username";
     public static final String COLUMN_PASSWORD = "password";
     public static final String COLUMN_LOCATION = "location";
@@ -29,37 +34,47 @@ public class toletDBHandler extends SQLiteOpenHelper{
     public static final String COLUMN_RENT = "rent";
     public static final String COLUMN_DESCRIPTION = "description";
 
+
+
     public toletDBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, DATABASE_NAME, factory, DATABASE_VERSION);
+        super(context, DATABASE_ADS, factory, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query = "CREATE TABLE " + TABLE_ADS + "("+
-                COLUMN_USER_NAME + " TEXT " +
-                COLUMN_PASSWORD + " TEXT " +
-                COLUMN_LOCATION + " TEXT " +
-                COLUMN_HOUSE_NO + " INTEGER " +
-                COLUMN_ROAD_NO + " INTEGER " +
-                COLUMN_FLOOR + " INTEGER " +
-                COLUMN_SIZE + " INTEGER " +
-                COLUMN_ROOMS + " INTEGER " +
-                COLUMN_BEDS + " INTEGER " +
-                COLUMN_BATHS + " INTEGER " +
-                COLUMN_TYPE + " TEXT " +
-                COLUMN_LIFT + " TEXT " +
-                COLUMN_PARKING + " TEXT " +
-                COLUMN_RENT + " INTEGER " +
+        String query1 = "CREATE TABLE " + TABLE_ADS + "("+
+                COLUMN_USER_NAME + " TEXT, " +
+                COLUMN_PASSWORD + " TEXT, " +
+                COLUMN_LOCATION + " TEXT, " +
+                COLUMN_HOUSE_NO + " INTEGER, " +
+                COLUMN_ROAD_NO + " INTEGER, " +
+                COLUMN_FLOOR + " INTEGER, " +
+                COLUMN_SIZE + " INTEGER, " +
+                COLUMN_ROOMS + " INTEGER, " +
+                COLUMN_BEDS + " INTEGER, " +
+                COLUMN_BATHS + " INTEGER, " +
+                COLUMN_TYPE + " TEXT, " +
+                COLUMN_LIFT + " TEXT, " +
+                COLUMN_PARKING + " TEXT, " +
+                COLUMN_RENT + " INTEGER, " +
                 COLUMN_DESCRIPTION + " TEXT " +
 
 
                 ");";
-        db.execSQL(query);
+        String query2 = "CREATE TABLE " + TABLE_ACCOUNTS + "("+
+                COLUMN_USER_NAME + " TEXT, " +
+                COLUMN_PASSWORD + " TEXT " +
+                ");";
+
+        db.execSQL(query1);
+        db.execSQL(query2);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_ADS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_ACCOUNTS);
         onCreate(db);
     }
 
@@ -87,7 +102,7 @@ public class toletDBHandler extends SQLiteOpenHelper{
     }
 
 
-    public ArrayList<myAdsObjects> readDatabase(String username , String password){
+    public ArrayList<myAdsObjects> readAdsDatabase(String username , String password){
         ArrayList<myAdsObjects> myAdsArrayList = new ArrayList<>();
         SQLiteDatabase db = getWritableDatabase();
         String query = "SELECT * FROM "+

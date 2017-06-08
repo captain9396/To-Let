@@ -1,7 +1,7 @@
 package com.tolet.tolet;
 
 /**
- * Created by dipto on 6/8/17.
+ * Created by dipto on 6/6/17.
  */
 
 public class myAdsObjects{
