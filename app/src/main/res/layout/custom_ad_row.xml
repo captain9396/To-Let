@@ -15,31 +15,35 @@
         android:layout_weight="0.14" />
 
     <TextView
-        android:id="@+id/owner"
+        android:id="@+id/location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.04"
-        android:text="Owner" />
+        android:text="        Location"
+        android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/location"
+        android:id="@+id/rooms"
         android:layout_width="192dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.04"
-        android:text="Location" />
+        android:text="        Rooms"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.05"
-        android:text="Size" />
+        android:text="        Size"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/rent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.05"
-        android:text="Rent" />
+        android:text="        Rent"
+        android:textSize="20sp" />
 
 </LinearLayout>
