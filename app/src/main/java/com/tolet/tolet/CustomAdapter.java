@@ -34,10 +34,10 @@ public class CustomAdapter extends ArrayAdapter<myAdsObjects> {
         ImageView myImageView = (ImageView) customView.findViewById(R.id.imageView);
 
 
-        locationTextView.setText(locationTextView.getText().toString() + ": " + singleRowItems.getLocationString().toString());
-        roomsTextView.setText(roomsTextView.getText().toString() + ": " +  singleRowItems.getRoomsString().toString());
-        sizeTextView.setText(sizeTextView.getText().toString() + ": " +singleRowItems.getSizeString().toString());
-        rentTextView.setText(rentTextView.getText().toString() + ": " +singleRowItems.getRentString().toString());
+        locationTextView.setText(locationTextView.getText().toString() + ": " + singleRowItems.getLocation().toString());
+        roomsTextView.setText(roomsTextView.getText().toString() + ": " +  singleRowItems.getRooms().toString());
+        sizeTextView.setText(sizeTextView.getText().toString() + ": " +singleRowItems.getSize().toString());
+        rentTextView.setText(rentTextView.getText().toString() + ": " +singleRowItems.getRent().toString());
 
         myImageView.setImageResource(R.drawable.home);
 

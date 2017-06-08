@@ -36,11 +36,11 @@ public class MyAdsActivity extends Activity {
 //                "apple", "carrot", "orange"};
         ArrayList foods = new ArrayList<>();
 
-        foods.add(new myAdsObjects("apple" , "34" , "12" , "12313"));
-        foods.add(new myAdsObjects("orange" , "46" , "12" , "19999"));
-        foods.add(new myAdsObjects("kola" , "89" , "8" , "31553"));
-        foods.add(new myAdsObjects("grape" , "32" , "9" , "50000"));
-        foods.add(new myAdsObjects("dragon" , "12" , "67" , "45000"));
+//        foods.add(new myAdsObjects("apple" , "34" , "12" , "12313"));
+//        foods.add(new myAdsObjects("orange" , "46" , "12" , "19999"));
+//        foods.add(new myAdsObjects("kola" , "89" , "8" , "31553"));
+//        foods.add(new myAdsObjects("grape" , "32" , "9" , "50000"));
+//        foods.add(new myAdsObjects("dragon" , "12" , "67" , "45000"));
 
         ListAdapter myListAdapter = new CustomAdapter(this, foods);
         ListView myListView = (ListView) findViewById(R.id.myAdsList);
