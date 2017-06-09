@@ -36,7 +36,7 @@ public class CustomAdapter extends ArrayAdapter<Ads> {
 
 
         locationTextView.setText(locationTextView.getText().toString() + ": " + singleRowItems.getLocation().toString());
-        roomsTextView.setText("     "+ singleRowItems.getRooms().toString() + " rooms");
+        roomsTextView.setText("        "+ singleRowItems.getRooms().toString() + " rooms");
         sizeTextView.setText(sizeTextView.getText().toString() + ": " +singleRowItems.getSize().toString() + " sqft.");
         rentTextView.setText(rentTextView.getText().toString() + ": " +singleRowItems.getRent().toString() + " BDT/Month");
 

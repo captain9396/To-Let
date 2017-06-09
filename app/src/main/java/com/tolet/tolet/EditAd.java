@@ -118,19 +118,19 @@ public class EditAd extends AppCompatActivity {
                         rent = rentText.getText().toString();
                         description = descriptionText.getText().toString();
 
-                        newAd.setLocation(location);
-                        newAd.setHouseNumber(houseNumber);
-                        newAd.setRoadNumber(roadNumber);
-                        newAd.setFloor(floor);
-                        newAd.setSize(size);
-                        newAd.setRooms(rooms);
-                        newAd.setBeds(beds);
-                        newAd.setBaths(baths);
-                        newAd.setFlatType(flatType);
-                        newAd.setRent(rent);
-                        newAd.setDescription(description);
-                        newAd.setHasLift(hasLift);
-                        newAd.setHasParking(hasParking);
+                        if(!location.equals(""))newAd.setLocation(location);
+                        if(!houseNumber.equals(""))newAd.setHouseNumber(houseNumber);
+                        if(!roadNumber.equals(""))newAd.setRoadNumber(roadNumber);
+                        if(!floor.equals(""))newAd.setFloor(floor);
+                        if(!size.equals(""))newAd.setSize(size);
+                        if(!rooms.equals(""))newAd.setRooms(rooms);
+                        if(!beds.equals(""))newAd.setBeds(beds);
+                        if(!baths.equals(""))newAd.setBaths(baths);
+                        if(!flatType.equals(""))newAd.setFlatType(flatType);
+                        if(!rent.equals(""))newAd.setRent(rent);
+                        if(!description.equals(""))newAd.setDescription(description);
+                        if(!hasLift.equals(""))newAd.setHasLift(hasLift);
+                        if(!hasParking.equals(""))newAd.setHasParking(hasParking);
 
 
 

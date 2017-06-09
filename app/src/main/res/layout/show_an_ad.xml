@@ -68,10 +68,9 @@
         android:id="@+id/baths"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/size"
-        android:layout_alignRight="@+id/size"
+        android:text="TextView"
         android:layout_centerVertical="true"
-        android:text="TextView" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/beds"

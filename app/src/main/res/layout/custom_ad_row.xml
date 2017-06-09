@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.04"
         android:text="        Location"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp" />
 
     <TextView
@@ -28,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.04"
         android:text="        Rooms"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp" />
 
     <TextView
@@ -36,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.05"
         android:text="        Size"
+        android:textColor="#FFF"
         android:textSize="20sp" />
 
     <TextView
@@ -44,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.05"
         android:text="        Rent"
+        android:textColor="#FFF"
         android:textSize="20sp" />
 
 </LinearLayout>

@@ -349,38 +349,32 @@ public class toletDBHandler extends SQLiteOpenHelper{
         values.put(COLUMN_DESCRIPTION, newad.getDescription());
 
 
-        String ss =  COLUMN_LOCATION + "=\""+ newad.getLocation() + "\" " +
-                COLUMN_HOUSE_NO+ "=\""+ newad.getHouseNumber() + "\" " +
-                COLUMN_ROAD_NO + "=\""+newad.getRoadNumber() + "\" " +
-                COLUMN_FLOOR + "=\""+newad.getFloor() + "\" " +
-                COLUMN_SIZE + "=\""+newad.getSize() + "\" " +
-                COLUMN_ROOMS + "=\""+newad.getRooms() + "\" " +
-                COLUMN_BEDS + "=\""+newad.getBeds() + "\" " +
-                COLUMN_BATHS+ "=\""+ newad.getBaths() + "\" " +
-                COLUMN_TYPE + "=\""+newad.getFlatType() + "\" " +
-                COLUMN_LIFT + "=\""+newad.getHasLift() + "\" " +
-                COLUMN_PARKING + "=\""+newad.getHasParking() + "\" " +
-                COLUMN_RENT+ "=\""+ newad.getRent() + "\" " +
+        String ss =  COLUMN_LOCATION + "=\""+ newad.getLocation() + "\", " +
+                COLUMN_HOUSE_NO+ "=\""+ newad.getHouseNumber() + "\", " +
+                COLUMN_ROAD_NO + "=\""+newad.getRoadNumber() + "\", " +
+                COLUMN_FLOOR + "=\""+newad.getFloor() + "\", " +
+                COLUMN_SIZE + "=\""+newad.getSize() + "\", " +
+                COLUMN_ROOMS + "=\""+newad.getRooms() + "\", " +
+                COLUMN_BEDS + "=\""+newad.getBeds() + "\", " +
+                COLUMN_BATHS+ "=\""+ newad.getBaths() + "\", " +
+                COLUMN_TYPE + "=\""+newad.getFlatType() + "\", " +
+                COLUMN_LIFT + "=\""+newad.getHasLift() + "\", " +
+                COLUMN_PARKING + "=\""+newad.getHasParking() + "\", " +
+                COLUMN_RENT+ "=\""+ newad.getRent() + "\", " +
                 COLUMN_DESCRIPTION + "=\""+newad.getDescription() + "\" ";
         
         
         
-        String qq = " WHERE " + COLUMN_LOCATION + "=\""+ oldad.getLocation() + "\" " +
-        COLUMN_HOUSE_NO+ "=\""+ oldad.getHouseNumber() + "\" " + 
-        COLUMN_ROAD_NO + "=\""+oldad.getRoadNumber() + "\" " + 
-        COLUMN_FLOOR + "=\""+oldad.getFloor() + "\" " + 
-        COLUMN_SIZE + "=\""+oldad.getSize() + "\" " + 
-        COLUMN_ROOMS + "=\""+oldad.getRooms() + "\" " + 
-        COLUMN_BEDS + "=\""+oldad.getBeds() + "\" " + 
-        COLUMN_BATHS+ "=\""+ oldad.getBaths() + "\" " + 
-        COLUMN_TYPE + "=\""+oldad.getFlatType() + "\" " + 
-        COLUMN_LIFT + "=\""+oldad.getHasLift() + "\" " + 
-        COLUMN_PARKING + "=\""+oldad.getHasParking() + "\" " + 
-        COLUMN_RENT+ "=\""+ oldad.getRent() + "\" " + 
-        COLUMN_DESCRIPTION + "=\""+oldad.getDescription() + "\" ";
+        String qq = COLUMN_LOCATION + "=\""+ oldad.getLocation() + "\" AND " +
+        COLUMN_HOUSE_NO+ "=\""+ oldad.getHouseNumber() + "\" AND " +
+        COLUMN_ROAD_NO + "=\""+oldad.getRoadNumber() + "\" AND " +
+        COLUMN_FLOOR + "=\""+oldad.getFloor() + "\" AND " +
+        COLUMN_SIZE + "=\""+oldad.getSize() + "\" AND " +
+        COLUMN_ROOMS + "=\""+oldad.getRooms() + "\"";
+
         
-        
-        db.execSQL("UPDATE " + TABLE_ADS + " SET WHERE location =\"" + "mirpur\"");
+        Cursor cursor = db.rawQuery("UPDATE ads_2 SET " + ss + " WHERE " + qq, null);
+        cursor.moveToFirst();
         db.close();
     }
     
