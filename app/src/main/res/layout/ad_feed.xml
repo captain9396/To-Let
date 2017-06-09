@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
-        android:text="My Ads"
+        android:text="Hunt Home"
         android:textSize="30sp" />
 
     <Button

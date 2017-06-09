@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/home" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:layout_below="@+id/owner"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_toEndOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/houseno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/location"
+        android:layout_alignStart="@+id/location"
+        android:layout_below="@+id/location"
+        android:layout_marginTop="21dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/roadno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/houseno"
+        android:layout_alignStart="@+id/houseno"
+        android:layout_below="@+id/houseno"
+        android:layout_marginTop="23dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/floor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/roadno"
+        android:layout_alignStart="@+id/roadno"
+        android:layout_below="@+id/roadno"
+        android:layout_marginTop="29dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/baths"
+        android:layout_alignLeft="@+id/floor"
+        android:layout_alignStart="@+id/floor" />
+
+    <TextView
+        android:id="@+id/baths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/size"
+        android:layout_alignRight="@+id/size"
+        android:layout_centerVertical="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/beds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/rooms"
+        android:layout_alignStart="@+id/rooms" />
+
+    <TextView
+        android:id="@+id/rooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_alignBaseline="@+id/size"
+        android:layout_alignBottom="@+id/size"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/beds"
+        android:layout_alignStart="@+id/beds"
+        android:layout_below="@+id/beds"
+        android:layout_marginTop="27dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/lift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/baths"
+        android:layout_alignRight="@+id/baths"
+        android:layout_alignTop="@+id/type"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/parking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lift"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_alignEnd="@+id/parking"
+        android:layout_alignRight="@+id/parking"
+        android:layout_below="@+id/type"
+        android:layout_marginTop="29dp"
+        android:text="TextView"
+        android:layout_alignLeft="@+id/edit"
+        android:layout_alignStart="@+id/edit" />
+
+    <Button
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/description"
+        android:layout_marginTop="11dp"
+        android:layout_toLeftOf="@+id/location"
+        android:layout_toStartOf="@+id/location"
+        android:text="edit" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edit"
+        android:layout_toEndOf="@+id/lift"
+        android:layout_toRightOf="@+id/lift"
+        android:text="delete ad" />
+
+    <TextView
+        android:id="@+id/rent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/parking"
+        android:layout_alignStart="@+id/parking"
+        android:layout_centerVertical="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/location"
+        android:layout_alignStart="@+id/location" />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/background_light"
+        app:srcCompat="@drawable/back" />
+
+</RelativeLayout>

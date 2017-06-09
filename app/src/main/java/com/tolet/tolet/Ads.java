@@ -4,7 +4,37 @@ package com.tolet.tolet;
  * Created by dipto on 6/6/17.
  */
 
-public class myAdsObjects{
+public class Ads {
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Ads(int id, String username, String password, String location, String houseNumber, String roadNumber, String floor, String size, String rooms, String beds, String baths, String flatType, String hasLift, String hasParking, String rent, String description) {
+
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.location = location;
+        this.houseNumber = houseNumber;
+        this.roadNumber = roadNumber;
+        this.floor = floor;
+        this.size = size;
+        this.rooms = rooms;
+        this.beds = beds;
+        this.baths = baths;
+        this.flatType = flatType;
+        this.hasLift = hasLift;
+        this.hasParking = hasParking;
+        this.rent = rent;
+        this.description = description;
+    }
+
     private String username;
     private String password;
     private String location;
@@ -21,7 +51,7 @@ public class myAdsObjects{
     private String rent;
     private String description;
 
-    public myAdsObjects(){}
+    public Ads(){}
 
     public String getUsername() {
         return username;
@@ -39,12 +69,12 @@ public class myAdsObjects{
         this.password = password;
     }
 
-    public myAdsObjects(String username, String password,
-                        String location, String houseNumber,
-                        String roadNumber, String floor,
-                        String size, String rooms, String beds,
-                        String baths, String flatType, String hasLift,
-                        String hasParking, String rent, String description) {
+    public Ads(String username, String password,
+               String location, String houseNumber,
+               String roadNumber, String floor,
+               String size, String rooms, String beds,
+               String baths, String flatType, String hasLift,
+               String hasParking, String rent, String description) {
         this.username = username;
         this.password = password;
         this.location = location;
@@ -175,4 +205,22 @@ public class myAdsObjects{
     public String getDescription() {
         return description;
     }
+}
+
+
+class SingletonAd{
+    private static SingletonAd singletonAd = new SingletonAd();
+    Ads ad;
+    private SingletonAd(){}
+
+    public Ads getAd() {
+        return ad;
+    }
+
+    public void setAds(Ads ad) {
+        this.ad = ad;
+    }
+
+    public static SingletonAd getInstance(){ return singletonAd; }
+
 }

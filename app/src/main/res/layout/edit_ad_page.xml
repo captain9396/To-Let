@@ -28,7 +28,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="35dp"
-            android:text="Ad Info"
+            android:text="Edit Info"
             android:textColorLink="@color/colorPrimary"
             android:textSize="30sp" />
 

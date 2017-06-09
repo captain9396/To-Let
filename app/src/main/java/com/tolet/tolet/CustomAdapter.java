@@ -10,22 +10,23 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 /**
  * Created by dipto on 6/8/17.
  */
 
-public class CustomAdapter extends ArrayAdapter<myAdsObjects> {
+public class CustomAdapter extends ArrayAdapter<Ads> {
+
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater myLayoutInflater = LayoutInflater.from(getContext());
         View customView = myLayoutInflater.inflate(R.layout.custom_ad_row , parent , false);
 
-        myAdsObjects singleRowItems = getItem(position);
+        Ads singleRowItems = getItem(position);
+
         TextView locationTextView = (TextView) customView.findViewById(R.id.location);
         TextView roomsTextView = (TextView) customView.findViewById(R.id.rooms);
         TextView sizeTextView = (TextView) customView.findViewById(R.id.size);
@@ -35,9 +36,9 @@ public class CustomAdapter extends ArrayAdapter<myAdsObjects> {
 
 
         locationTextView.setText(locationTextView.getText().toString() + ": " + singleRowItems.getLocation().toString());
-        roomsTextView.setText(roomsTextView.getText().toString() + ": " +  singleRowItems.getRooms().toString());
-        sizeTextView.setText(sizeTextView.getText().toString() + ": " +singleRowItems.getSize().toString());
-        rentTextView.setText(rentTextView.getText().toString() + ": " +singleRowItems.getRent().toString());
+        roomsTextView.setText("     "+ singleRowItems.getRooms().toString() + " rooms");
+        sizeTextView.setText(sizeTextView.getText().toString() + ": " +singleRowItems.getSize().toString() + " sqft.");
+        rentTextView.setText(rentTextView.getText().toString() + ": " +singleRowItems.getRent().toString() + " BDT/Month");
 
         myImageView.setImageResource(R.drawable.home);
 
@@ -46,5 +47,8 @@ public class CustomAdapter extends ArrayAdapter<myAdsObjects> {
 
     CustomAdapter(Context context , ArrayList foods){
         super(context , R.layout.custom_ad_row , foods);
+
     }
+
+
 }

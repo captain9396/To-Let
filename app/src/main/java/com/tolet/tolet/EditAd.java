@@ -14,7 +14,7 @@ import android.widget.Toast;
  * Created by dipto on 6/8/17.
  */
 
-public class AdInfoActivity extends AppCompatActivity {
+public class EditAd extends AppCompatActivity {
 
     private Button submitButton;
     private Spinner typeSpinner;
@@ -30,6 +30,10 @@ public class AdInfoActivity extends AppCompatActivity {
     private CheckBox hasParkingBox ;
     private EditText rentText;
     private EditText descriptionText;
+
+    SingletonAd singletonAd = SingletonAd.getInstance();
+    Ads oldAd = singletonAd.getAd();
+    Ads newAd = oldAd;
 
 
     private String username;
@@ -53,11 +57,11 @@ public class AdInfoActivity extends AppCompatActivity {
 
 
     private toletDBHandler dbHandler;
-    
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ad_info_page);
+        setContentView(R.layout.edit_ad_page);
 
         submitButton = (Button)findViewById(R.id.submitButton);
 
@@ -114,32 +118,35 @@ public class AdInfoActivity extends AppCompatActivity {
                         rent = rentText.getText().toString();
                         description = descriptionText.getText().toString();
 
+                        newAd.setLocation(location);
+                        newAd.setHouseNumber(houseNumber);
+                        newAd.setRoadNumber(roadNumber);
+                        newAd.setFloor(floor);
+                        newAd.setSize(size);
+                        newAd.setRooms(rooms);
+                        newAd.setBeds(beds);
+                        newAd.setBaths(baths);
+                        newAd.setFlatType(flatType);
+                        newAd.setRent(rent);
+                        newAd.setDescription(description);
+                        newAd.setHasLift(hasLift);
+                        newAd.setHasParking(hasParking);
 
-                        if(location.equals("") == false &&
-                                size.equals("") == false &&
-                                rooms.equals("") == false &&
-                                flatType.equals("") == false &&
-                                rent.equals("") == false ){
-                            Ads objects = new Ads(
-                                    username, password,location ,
-                                    houseNumber, roadNumber, floor,
-                                    size , rooms , beds ,
-                                    baths , flatType , hasLift,
-                                    hasParking, rent , description
-                            );
-                            dbHandler.insertAd( objects);
-                            Toast.makeText(getApplicationContext() , "add successfully created" , Toast.LENGTH_LONG).show();
+
+
+
+                            Ads objects = newAd;
+                            dbHandler.updateAd(objects , oldAd);
+                            Toast.makeText(getApplicationContext() , "ad updated" , Toast.LENGTH_LONG).show();
                             launchMyAds();
 
-                        }
-                        else{
-                            Toast.makeText(getApplicationContext() , "please fill the required fields" , Toast.LENGTH_LONG).show();
-                        }
+
+
                     }
                 }
         );
     }
-//
+    //
     private void launchMyAds(){
         Intent intent = new Intent(this, MyAdsActivity.class);
         startActivity(intent);

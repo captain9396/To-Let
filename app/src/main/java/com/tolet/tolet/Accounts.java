@@ -2,12 +2,29 @@ package com.tolet.tolet;
 
 
 public class Accounts {
+    private int id;
     private String username;
     private String password;
+
+    public Accounts(){}
+
+    public Accounts(int id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
 
     public Accounts(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getUsername() {

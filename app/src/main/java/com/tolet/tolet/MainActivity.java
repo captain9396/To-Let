@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        toletDBHandler dbHandler = new toletDBHandler(this , null , null , 1);
+
+
         signInButton = (Button)findViewById(R.id.signInButton);
 
         signInButton.setOnClickListener(
@@ -28,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+
     }
 
     private void launchSignIn() {

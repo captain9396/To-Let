@@ -23,7 +23,7 @@ import java.util.Collections;
  * Created by dipto on 6/8/17.
  */
 
-public class MyAdsActivity extends Activity {
+public class AdFeed extends Activity {
 
     private Button homeButtonAds;
     private Button accountButtonAds;
@@ -41,7 +41,7 @@ public class MyAdsActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_ads_page);
+        setContentView(R.layout.ad_feed);
         currentSingletonAd = SingletonAd.getInstance();
 
 
@@ -51,9 +51,9 @@ public class MyAdsActivity extends Activity {
         password = currentUser.getPassword();
 
         ArrayList<Ads> foods = new ArrayList<>();
-        foods = dbHandler.fetchMyAds(username , password);
+        foods = dbHandler.fetchAllAds();
         Collections.reverse(foods);
-       // myads.setText(foods.get(0).getUsername());
+
         if(foods.isEmpty()){
             Toast.makeText(getApplicationContext() , "no ads to show" , Toast.LENGTH_LONG).show();
         }
